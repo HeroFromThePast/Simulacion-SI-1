@@ -5,8 +5,9 @@ using UnityEngine;
 public class Bolita : MonoBehaviour
 {
     MyVector2D ballPosition;
-    [SerializeField] MyVector2D displacement;
+    MyVector2D displacement;
     [SerializeField] Camera cam;
+    [SerializeField] MyVector2D velocity;
    
     void Start()
     {
@@ -23,26 +24,28 @@ public class Bolita : MonoBehaviour
 
     public void Move()
     {
-        ballPosition = ballPosition + displacement;
-        if(ballPosition.x > cam.orthographicSize)
+        //displacement = velocity * Time.deltaTime;
+        ballPosition = ballPosition + velocity * Time.deltaTime;
+
+        if (ballPosition.x > cam.orthographicSize)
         {
-            displacement.x *= -1;
+            velocity.x *= -1;
             ballPosition.x = cam.orthographicSize;
         }
         else if (ballPosition.x < -cam.orthographicSize)
         {
-            displacement.x *= -1;
+            velocity.x *= -1;
             ballPosition.x = -cam.orthographicSize;
         }
 
         if (ballPosition.y > cam.orthographicSize)
         {
-            displacement.y *= -1;
+            velocity.y *= -1;
             ballPosition.y = cam.orthographicSize;
         }
         else if (ballPosition.y < -cam.orthographicSize)
         {
-            displacement.y *= -1;
+            velocity.y *= -1;
             ballPosition.y = -cam.orthographicSize;
         }
         transform.position = new Vector3(ballPosition.x, ballPosition.y);

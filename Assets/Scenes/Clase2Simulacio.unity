@@ -332,10 +332,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d9a75e74714b5940bd747daf3e72378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displacement:
+  cam: {fileID: 1049636343}
+  velocity:
     x: 1
     y: 0
-  cam: {fileID: 1049636343}
 --- !u!212 &611198555
 SpriteRenderer:
   m_ObjectHideFlags: 0
