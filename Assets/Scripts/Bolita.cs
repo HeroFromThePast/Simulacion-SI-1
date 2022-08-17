@@ -18,6 +18,7 @@ public class Bolita : MonoBehaviour
     {
         ballPosition.Draw(Color.blue);
         displacement.Draw(ballPosition, Color.red);
+        Move();
     }
 
     public void Move()
