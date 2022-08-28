@@ -220,7 +220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &446714387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,10 +332,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d9a75e74714b5940bd747daf3e72378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  acceleration:
+    x: 0
+    y: -9.8
+  damping: 0.535
   cam: {fileID: 1049636343}
   velocity:
-    x: 1
+    x: 0
     y: 0
+  accelerationState: 1
 --- !u!212 &611198555
 SpriteRenderer:
   m_ObjectHideFlags: 0
