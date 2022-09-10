@@ -6,10 +6,39 @@ public struct MyVector2D
 {
     public float x, y;
 
+    public float magnitude => Mathf.Sqrt(x * x + y * y);
+
+    public MyVector2D normalized
+    {
+        get
+        {
+            float m = magnitude;
+            if (m <= 0.0001f)
+            {
+
+                return new MyVector2D(0,0);
+            }
+
+           return  new MyVector2D(x / m, y / m);
+        }
+    }
+
     public MyVector2D(float x, float y)
     {
         this.x = x;
         this.y = y; 
+    }
+
+    public void Normalize()
+    {
+        float m = magnitude;
+        float ratio = 0.0001f;
+        if(m <= ratio)
+        {
+            x = 0; y = 0;
+            return;
+        }
+        x = x/m; y = y/m;
     }
 
     public MyVector2D Sum(MyVector2D a)
@@ -57,6 +86,11 @@ public struct MyVector2D
     {
         return new MyVector2D(a.x * b, a.y * b);
     }
+    public static MyVector2D operator /(MyVector2D a, float b)
+    {
+        return new MyVector2D(a.x / b, a.y / b);
+    }
+
     public override string ToString()
     {
         return $"[{x}, {y}]";
