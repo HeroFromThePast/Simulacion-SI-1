@@ -40,7 +40,7 @@ public class Bolitaforces : MonoBehaviour
 
         if (fluid == true)
         {
-            if(transform.localScale.y <= 0)
+            if(transform.localScale.y >= 0)
             {
                 float frontalArea = transform.localScale.x;
                 float rho = 1; //densidad
