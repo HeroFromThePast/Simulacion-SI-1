@@ -332,7 +332,7 @@ MonoBehaviour:
   angleDeg: 0
   angularSpeed: 100
   angularAccel: 1
-  radialSpeed: 0
+  radialSpeed: 1
   radialSAccel: 0.2
   bolita: {fileID: 1668723147}
 --- !u!4 &1155268699
